@@ -100,7 +100,7 @@ $STD npm upgrade
 echo "Installed backend"
 
 echo "Starting npm"
-node index.js
+node index.js localhost:81
 echo "Started npm"
 
 echo "Cleaning up"
