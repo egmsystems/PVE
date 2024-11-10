@@ -21,7 +21,7 @@ else
   pct create $ID $TEMPLATE --hostname $HOSTNAME --storage $STORAGE --rootfs $ROOTFS --memory $MEMORY --swap $SWAP --net0 $NET0 --password $PASSWORD
 fi
 pct start $ID
-export aptproxy = "$(cat /etc/apt/apt.conf.d/00aptproxy)"
+export aptproxy="$(cat /etc/apt/apt.conf.d/00aptproxy)"
 export DB_MYSQL_HOST="192.168.0.70"
 export DB_MYSQL_USER=nginxProxyManager
 export DB_MYSQL_PASSWORD=Gp7mf1MRru3oMGs
