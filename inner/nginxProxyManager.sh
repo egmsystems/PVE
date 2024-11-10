@@ -60,14 +60,11 @@ mkdir -p /tmp/nginx/body \
   /var/cache/nginx/proxy_temp \
   /etc/nginx/logs \
   /etc/nginx/conf
-cp -r docker/rootfs/var/www/html/* /var/www/html/
-cp -r docker/rootfs/etc/nginx/* /etc/nginx/
-cp docker/rootfs/etc/letsencrypt.ini /etc/letsencrypt.ini
-cp docker/rootfs/etc/logrotate.d/nginx-proxy-manager /etc/logrotate.d/nginx-proxy-manager
+cp docker/rootfs /
 ln -sf /etc/nginx/nginx.conf /etc/nginx/conf/nginx.conf
 rm -f /etc/nginx/conf.d/dev.conf
-cp -r backend/* /app
-cp -r global/* /app/global
+cp backend /app
+cp -r global/*.* /app/global/
 chmod -R 777 /var/cache/nginx
 chown root /tmp/nginx
 echo "Installed npm"
