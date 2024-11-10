@@ -27,5 +27,5 @@ export DB_MYSQL_USER=nginxProxyManager
 export DB_MYSQL_PASSWORD=Gp7mf1MRru3oMGs
 export DB_MYSQL_NAME=nginxProxyManager
 #pct console $ID
-pct exec $ID -- bash -c "$(wget -qLO - https://raw.githubusercontent.com/egmsystems/PVE/refs/heads/main/inner/nginxProxyManager.sh)"
+time pct exec $ID -- bash -c "$(wget -qLO - https://raw.githubusercontent.com/egmsystems/PVE/refs/heads/main/inner/nginxProxyManager.sh)"
 echo "http://$HOSTNAME"
