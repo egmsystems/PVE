@@ -4,6 +4,14 @@ echo "Create inner"
 
 silent() { "$@" >/dev/null 2>&1; }
 
+mkdir -p /etc/systemd/system/getty@tty1.service.d/
+echo '[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin root --noclear %I $TERM
+' > /etc/systemd/system/getty@tty1.service.d/override.conf
+systemctl daemon-reload
+systemctl restart getty@tty1
+
 echo "apt-cacher setting"
 echo $aptproxy > /etc/apt/apt.conf.d/00aptproxy
 cat /etc/apt/apt.conf.d/00aptproxy
