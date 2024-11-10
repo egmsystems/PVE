@@ -76,10 +76,10 @@ mkdir -p /tmp/nginx/body \
   /var/cache/nginx/proxy_temp \
   /etc/nginx/logs \
   /etc/nginx/conf
-cp docker/rootfs /
+cp -r docker/rootfs /
 ln -sf /etc/nginx/nginx.conf /etc/nginx/conf/nginx.conf
 rm -f /etc/nginx/conf.d/dev.conf
-cp backend /app
+cp -r backend /app
 cp -r global/*.* /app/global/
 chmod -R 777 /var/cache/nginx
 chown root /tmp/nginx
@@ -135,7 +135,7 @@ echo "service started"
 
 echo "Cleaning up"
 cd ..
-rm -rf nginx-proxy-manager-*
+#rm -rf nginx-proxy-manager-*
 $STD apt-get -y autoremove
 $STD apt-get -y autoclean
 echo "Cleaned"
