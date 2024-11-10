@@ -2,7 +2,7 @@
 # bash -c "$(wget -qLO - https://raw.githubusercontent.com/egmsystems/ProxmoxVE/refs/heads/main/lxc/nginxProxyManager.sh)"
 echo "egmPCTcreate outter"
 ID=$(pvesh get /cluster/nextid)
-PASSWORD=""
+PASSWORD="prueba"
 VERBOSE="no"
 HOSTNAME="nginxProxyManager2"
 STORAGE="local-lvm"
